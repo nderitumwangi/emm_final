@@ -8,6 +8,11 @@ import pandas as pd
 import joblib
 import numpy as np
 
+import os
+st.write("📁 Current Working Directory:", os.getcwd())
+st.write("📂 Files in directory:", os.listdir())
+
+
 # =============================================
 # Page Configuration
 # =============================================
