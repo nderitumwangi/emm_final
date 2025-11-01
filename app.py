@@ -109,4 +109,4 @@ if st.button("Predict Performance"):
 # Footer Section
 # =============================================
 st.divider()
-st.caption("Developed by Alex Ndiritu — Powered by Streamlit and scikit-learn.")
+st.caption("")
