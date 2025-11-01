@@ -8,10 +8,6 @@ import numpy as np
 import joblib
 import sklearn   
 
-st.sidebar.title("⚙️ Environment Info")
-st.sidebar.write(f"**scikit-learn version:** {sklearn.__version__}")
-st.sidebar.write(f"**Python version:** {st.__version__}")
-
 # -------------------------------
 # 1. Load the trained model
 # -------------------------------
