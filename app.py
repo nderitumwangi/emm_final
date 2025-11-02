@@ -147,7 +147,7 @@ if submitted:
 
     try:
         prediction = model.predict(input_data)[0]
-        st.success(f"⭐ Predicted Employee Performance Rating: **{prediction} / 4**")
+        st.success(f" Predicted Employee Performance Rating: **{prediction} / 4**")
     except Exception as e:
         st.error(f"Prediction failed: {e}")
         st.stop()
@@ -166,9 +166,9 @@ if submitted:
     st.markdown("---")
     st.markdown("### 💡 Key HR Factors Influencing Performance")
     st.markdown("""
-    - 🏆 **TrainingTimesLastYear** – More training correlates with higher performance.  
-    - 📈 **YearsSinceLastPromotion** – Long gaps can reduce motivation.  
-    - 👔 **ExperienceYearsAtThisCompany** – Mid-tenure (3–7 years) tends to perform best.  
-    - ⚖️ **Work-Life Balance** – Healthy balance drives sustained performance.  
-    - 💬 **Job Involvement** – Active engagement is a strong predictor of high ratings.  
+    -  **TrainingTimesLastYear** – More training correlates with higher performance.  
+    -  **YearsSinceLastPromotion** – Long gaps can reduce motivation.  
+    -  **ExperienceYearsAtThisCompany** – Mid-tenure (3–7 years) tends to perform best.  
+    -  **Work-Life Balance** – Healthy balance drives sustained performance.  
+    -  **Job Involvement** – Active engagement is a strong predictor of high ratings.  
     """)
