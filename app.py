@@ -163,12 +163,4 @@ if submitted:
     else:
         st.markdown("### 🔴 Needs Support — Focus on engagement, mentoring, and training.")
 
-    st.markdown("---")
-    st.markdown("### 💡 Key HR Factors Influencing Performance")
-    st.markdown("""
-    -  **TrainingTimesLastYear** – More training correlates with higher performance.  
-    -  **YearsSinceLastPromotion** – Long gaps can reduce motivation.  
-    -  **ExperienceYearsAtThisCompany** – Mid-tenure (3–7 years) tends to perform best.  
-    -  **Work-Life Balance** – Healthy balance drives sustained performance.  
-    -  **Job Involvement** – Active engagement is a strong predictor of high ratings.  
-    """)
+   
