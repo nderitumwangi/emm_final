@@ -7,7 +7,7 @@ import sklearn
 # Load the model
 @st.cache_resource
 def load_model():
-    return joblib.load("best_employee_performance_model_sklearn.joblib")
+    return joblib.load("best_employee_performance_model.joblib")
 
 def main():
     st.title("Employee Performance Predictor")
