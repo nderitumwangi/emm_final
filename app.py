@@ -67,6 +67,7 @@ def main():
         else: return "45+"
 
     # Create a dataframe from inputs
+     # Create a dataframe from inputs
     data = {
         'Age': age,
         'AgeGroup': get_age_group(age),
@@ -98,6 +99,32 @@ def main():
     }
     input_df = pd.DataFrame([data])
 
+    # Define numeric and categorical columns
+    numeric_columns = [
+        'Age', 'DistanceFromHome', 'EmpJobLevel',
+        'EmpEnvironmentSatisfaction', 'EmpJobSatisfaction',
+        'EmpRelationshipSatisfaction', 'EmpWorkLifeBalance',
+        'EmpJobInvolvement', 'ExperienceYearsAtThisCompany',
+        'ExperienceYearsInCurrentRole', 'YearsWithCurrManager',
+        'YearsSinceLastPromotion', 'TotalWorkExperienceInYears',
+        'NumCompaniesWorked', 'TrainingTimesLastYear',
+        'EmpLastSalaryHikePercent', 'EmpHourlyRate'
+    ]
+
+    categorical_columns = [
+        'AgeGroup', 'Gender', 'MaritalStatus', 'EmpDepartment',
+        'EmpJobRole', 'EmpEducationLevel', 'EducationBackground',
+        'BusinessTravelFrequency', 'OverTime', 'Attrition'
+    ]
+
+    # Ensure numeric columns are float
+    for col in numeric_columns:
+        input_df[col] = input_df[col].astype(float)
+
+    # Ensure categorical columns are string
+    for col in categorical_columns:
+        input_df[col] = input_df[col].astype(str)
+
     if st.button("Predict Performance"):
         model = load_model()
         if model is not None:
@@ -119,8 +146,21 @@ def main():
                     st.info("Good Performance. This employee meets expectations.")
                 else:
                     st.warning("Performance needs improvement. Consider additional support and training.")
+
+                # Add feature importance visualization
+                st.subheader("Top Factors Influencing Prediction")
+                try:
+                    feature_importance = pd.DataFrame({
+                        'Feature': list(input_df.columns),
+                        'Value': list(input_df.iloc[0])
+                    })
+                    st.dataframe(feature_importance)
+                except:
+                    st.info("Feature importance visualization not available")
+
             except Exception as e:
                 st.error(f"Error making prediction: {str(e)}")
+                st.error("Please check if all input values are in the expected format")
 
 if __name__ == "__main__":
     main()
