@@ -23,7 +23,7 @@ st.set_page_config(
 @st.cache_resource
 def load_model():
     try:
-        model = joblib.load("best_employee_performance_model.joblib")
+        model = joblib.load("./best_employee_performance_model.joblib")
         return model
     except Exception as e:
         st.error(f"Error loading model: {e}")
